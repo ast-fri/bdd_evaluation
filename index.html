@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Evaluating Compound AI Systems through Behaviors, Not Benchmarks</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <!-- Fonts: keep lightweight, replace if you want -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Serif&display=swap"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -18,7 +19,77 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
-  <!-- If you copied this site, remember to remove analytics scripts from the original. -->
+  <style>
+    /* Small inline overrides to tidy icon sizing & spacing */
+    :root {
+      --icon-size: 0.95em; /* global icon size; tweak smaller/larger */
+      --button-icon-size: 1.05em;
+    }
+
+    /* Make navbar icons compact */
+    .navbar .icon img,
+    .navbar .icon .fa {
+      height: var(--icon-size);
+      width: auto;
+      font-size: var(--icon-size);
+      line-height: 1;
+    }
+
+    /* Publication links: smaller icons and tighter spacing */
+    .publication-links .button .icon,
+    .publication-links .button img,
+    .publication-links .button svg {
+      height: var(--button-icon-size);
+      width: auto;
+      font-size: var(--button-icon-size);
+      margin-right: 0.5rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Adjust Font Awesome check icons in list */
+    .key-contribs .icon .fa-check-circle {
+      font-size: 1.0rem; /* smaller than before */
+      vertical-align: middle;
+    }
+
+    /* Icon + text list alignment */
+    .key-contribs li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+    .key-contribs .text {
+      flex: 1;
+    }
+
+    /* Slightly reduce top hero text weight on extremely large screens */
+    .publication-title {
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    /* Make bib pre block more compact */
+    pre code {
+      font-size: 0.95rem;
+    }
+
+    /* Section card style for new sections */
+    .highlight-card {
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(22,28,45,0.06);
+      padding: 1.6rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(180deg, #ffffff, #fbfdff);
+    }
+
+    /* Responsive tweaks for very small screens */
+    @media (max-width: 480px) {
+      :root { --icon-size: 0.85em; --button-icon-size: 0.9em; }
+      .publication-title { font-size: 1.6rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -38,9 +109,9 @@
       </span>
       </a>
 
-            <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          <span class="icon"><img src="./static/images/favicon.svg" alt="logo" style="height:1.2em;"></span>
+          <span class="icon"><img src="./static/images/favicon.svg" alt="logo" style="height:1.1em;"></span>
           More Research
         </a>
         <div class="navbar-dropdown">
@@ -51,7 +122,6 @@
             Needles-in-Images
           </a>
         </div>
-      </div>
       </div>
     </div>
   </div>
@@ -64,7 +134,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Evaluating Compound AI Systems through Behaviors, Not Benchmarks</h1>
-                    <div class="is-size-5 publication-authors">
+          <div class="is-size-5 publication-authors" style="margin-top: 0.6rem;">
             <span class="author-block">
               <a href="https://in.linkedin.com/in/pranav-bhagat-0b5145170">Pranav Bhagat</a><sup>*</sup>,</span>
             <span class="author-block">
@@ -76,7 +146,7 @@
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-5 publication-authors" style="margin-top:0.35rem;">
             <span class="author-block">Fujitsu Research</span>
           </div>
 
@@ -86,7 +156,10 @@
                 <a href="https://aclanthology.org/2025.findings-emnlp.1314.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
+                      <!-- PDF icon kept inline; scaled by CSS above -->
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false"
+                           data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 384 512"><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
                   </span>
                   <span>Paper (PDF)</span>
                 </a>
@@ -95,7 +168,7 @@
                 <a href="https://aclanthology.org/2025.findings-emnlp.1314"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <img src="https://aclanthology.org/images/acl-logo.svg" alt="ACL Anthology" style="height:1.2em">
+                      <img src="https://aclanthology.org/images/acl-logo.svg" alt="ACL Anthology" style="height:1.05em">
                   </span>
                   <span>Anthology Page</span>
                 </a>
@@ -134,7 +207,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <h2 class="title is-3">Project Demo</h2>
-        <p class="content">Below is a single demo video demonstrating the project's motivation and approach.</p>
+        <p class="content">Below video demonstrates the project's motivation and approach.</p>
         <!-- IMPORTANT: Put your demo video at ./static/videos/demo.mp4 or update the path below. -->
         <video id="demo" controls playsinline width="100%" poster="./static/images/demo_poster.jpg">
           <source src="./static/videos/demo.mp4" type="video/mp4">
@@ -145,7 +218,63 @@
       </div>
     </div>
 
-    <!-- Removed other demonstration videos/carousel as requested. -->
+    <!-- NEW: Why this matters -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="highlight-card">
+          <h3 class="title is-4" style="margin-bottom:0.6rem;">Why this matters — for builders & deployers</h3>
+          <p class="content" style="margin-bottom:0.6rem;">
+            Benchmarks are useful, but they often hide targeted failure modes that only appear in realistic
+            usage scenarios. This behavior-driven approach gives you interpretable, scenario-based tests
+            (think: "Given/When/Then") that map to real expectations from a deployed assistant — so you
+            can find and fix brittle behaviors before users do.
+          </p>
+          <div class="columns is-mobile is-multiline">
+            <div class="column is-half">
+              <p><span class="icon"><i class="fas fa-bug"></i></span> Surface realistic failure cases early</p>
+            </div>
+            <div class="column is-half">
+              <p><span class="icon"><i class="fas fa-balance-scale"></i></span> Make evaluation requirements explicit</p>
+            </div>
+            <div class="column is-half">
+              <p><span class="icon"><i class="fas fa-cogs"></i></span> Support tests across tables & text</p>
+            </div>
+            <div class="column is-half">
+              <p><span class="icon"><i class="fas fa-project-diagram"></i></span> Target tests to your CAI topology & tools</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW: How the evaluation works (3 steps) -->
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="highlight-card">
+          <h3 class="title is-4" style="margin-bottom:0.45rem;">How the evaluation works — 3 steps</h3>
+          <ol style="text-align:left; margin-left:1rem;">
+            <li style="margin-bottom:0.75rem;">
+              <strong>Generate test specifications:</strong> Use LLM prompts to write short, BDD-style test specs
+              (Scenario / Given / When / Then) that capture expected behaviors for your assistant.
+            </li>
+            <li style="margin-bottom:0.75rem;">
+              <strong>Select a diverse subset:</strong> Apply submodular selection to maximize semantic diversity
+              and document coverage, giving a compact but representative test suite.
+            </li>
+            <li style="margin-bottom:0.75rem;">
+              <strong>Implement as conversational QA:</strong> Transform each spec into document-grounded QA pairs
+              and run them through graph-based pipelines that can use both textual & tabular sources.
+            </li>
+          </ol>
+          <p class="content" style="margin-top:0.4rem;">
+            These steps are designed to complement — not replace — standard benchmarks, while exposing
+            operational failures that aggregate metrics often miss.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- end new sections -->
 
     <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
       <div class="column is-four-fifths">
@@ -153,34 +282,21 @@
         <div class="key-contribs-container">
           <ul class="key-contribs" role="list" aria-label="Key contributions">
             <li>
-            <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
-            <span class="text">Behavior-driven test specifications for evaluating information-seeking CAI systems.</span>
+              <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
+              <span class="text">Behavior-driven test specifications for evaluating information-seeking CAI systems.</span>
             </li>
             <li>
-            <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
-            <span class="text">Automated graph-based pipelines to implement scenario-aligned conversational QA over textual and tabular sources.</span>
+              <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
+              <span class="text">Automated graph-based pipelines to implement scenario-aligned conversational QA over textual and tabular sources.</span>
             </li>
             <li>
-            <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
-            <span class="text">Submodular selection procedure to ensure diverse, high-coverage test suites.</span>
+              <span class="icon"><i class="fas fa-check-circle" aria-hidden="true"></i></span>
+              <span class="text">Submodular selection procedure to ensure diverse, high-coverage test suites.</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-        <div class="content has-text-justified">
-          <p>
-            The paper is published in the Findings of EMNLP 2025. For full details, please see the
-            PDF linked above. If you have code, dataset, or a project repo, add links here (for
-            example, a GitHub repository and a dataset release).
-          </p>
-        </div>
-      </div>
-    </div> -->
 
   </div>
 </section>
@@ -208,10 +324,9 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This project page template is provided under a permissive template license. Please
-            update footer text, links, and license to match your preferences before deploying.
+            This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source</a> code of this website, we just ask that you link back to this page in the footer. Please remember to remove the analytics code included in the header of the website which you do not want on your website.
           </p>
         </div>
       </div>
